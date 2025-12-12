@@ -1,0 +1,51 @@
+/* src/components/Hero.css */
+
+.hero-section-video {
+  /* This is the main container for the video and text */
+  position: relative;
+  width: 100%;
+  height: 80vh; /* Reverted to a fixed height for a better-proportioned banner */
+  overflow: hidden;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.hero-video {
+  /* This styles the video itself to fill the container */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Makes the video take up the full width of its container */
+  height: 100%; /* Makes the video take up the full height of its container */
+  object-fit: cover; /* This is the key. It makes the video fill the entire space, cropping the top/bottom if needed to maintain aspect ratio. */
+  z-index: 1; /* Puts the video in the background layer */
+}
+
+/* Updated styling for the content container */
+.hero-content-video {
+  position: relative; /* Now the container is relative for the button's absolute positioning */
+  z-index: 2;
+  width: 100%; /* Important for centering the button */
+  height: 100%; /* Important for the button to be able to position at the bottom */
+  display: flex;
+  flex-direction: column; /* This is important if you add more elements */
+  align-items: center;
+  justify-content: flex-end; /* This is the key to moving the button down */
+}
+
+/* This is where we will add the button's final styling, separate from positioning */
+.hero-content-video button {
+  padding: 12px 30px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 2rem; /* Add some margin to push it up from the bottom */
+}
+
+.hero-content-video button:hover {
+  background-color: #fff;
+  color: #000;
+}

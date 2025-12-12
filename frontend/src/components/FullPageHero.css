@@ -1,0 +1,174 @@
+/* =========================================
+   CONTAINER & ANIMATION
+   ========================================= */
+.hero-wrapper {
+  /* Default: Full Screen Height */
+  width: 100vw;
+  height: 100vh; 
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Smooth transition for the shrink effect */
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* The Shrink State */
+.hero-wrapper--shrink {
+  height: 70vh; /* Becomes smaller */
+  width: 95vw;  /* Slightly narrower */
+  margin-top: 20px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.myFullPageSwiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================
+   SLIDE 1: VIDEO
+   ========================================= */
+.hero-section-video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Content Overlay */
+.hero-content-video {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Pushes button to bottom */
+  align-items: center;
+  padding-bottom: 80px; /* Space from bottom */
+}
+
+/* BUTTON STYLE (From your Hero.css) */
+.hero-button-outline {
+  padding: 12px 35px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.hero-button-outline:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* =========================================
+   SLIDE 2: QUOTE
+   ========================================= */
+.split-screen {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.split-left {
+  flex: 1;
+  height: 100%;
+}
+
+.quote-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.split-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.quote-text {
+  font-family: 'Times New Roman', serif;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-style: italic;
+  color: #333;
+  max-width: 600px;
+}
+
+.quote-author {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* =========================================
+   NAVIGATION ARROWS
+   ========================================= */
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50; /* Super high z-index to catch clicks */
+  transition: all 0.3s ease;
+}
+
+.hero-nav:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.hero-nav-prev { left: 30px; }
+.hero-nav-next { right: 30px; }
+
+/* Hide standard Swiper arrows */
+.swiper-button-next, .swiper-button-prev {
+  display: none !important;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .hero-nav { display: none; }
+  
+  .split-screen { flex-direction: column; }
+  .split-left { height: 50%; }
+  .split-right { height: 50%; }
+}
