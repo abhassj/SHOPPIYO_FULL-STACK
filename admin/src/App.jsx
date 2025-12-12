@@ -11,7 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import BlockedUsers from './pages/BlockedUsers'
 
-export const backendUrl = "http://localhost:4000";
+export const backendUrl = "https://shoppiyo-full-stack-backend-jg43.onrender.com";
 
 export const currency = '₹'
 

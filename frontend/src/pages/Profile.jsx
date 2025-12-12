@@ -16,7 +16,7 @@ const Profile = () => {
     // Fetch user profile
     const loadProfile = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/user/profile", {
+        const res = await axios.get("http://https://shoppiyo-full-stack-backend-jg43.onrender.com/api/user/profile", {
           headers: { token: token }
         });
 

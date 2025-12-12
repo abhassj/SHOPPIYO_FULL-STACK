@@ -4,7 +4,7 @@ const BlockedUsers = () => {
   const [blockedUsers, setBlockedUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/blocked-users")
+    fetch("http://https://shoppiyo-full-stack-backend-jg43.onrender.com/api/blocked-users")
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
