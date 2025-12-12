@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Outfit, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Form elements */
+select,
+input,
+textarea {
+  border: 1px solid #c2c2c2;
+  outline-color: #ff8a00;      
+  border-radius: 4px;
+}
+
+
+.active {
+  background-color: #fff2e0;   
+  border-color: #ff8a00;       
+  color: #ff8a00;            
+}
