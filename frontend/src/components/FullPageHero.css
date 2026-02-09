@@ -4,7 +4,7 @@
 .hero-wrapper {
   /* Default: Full Screen Height */
   width: 100vw;
-  height: 100vh; 
+  height: 100vh;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -16,11 +16,13 @@
 
 /* The Shrink State */
 .hero-wrapper--shrink {
-  height: 70vh; /* Becomes smaller */
-  width: 95vw;  /* Slightly narrower */
+  height: 70vh;
+  /* Becomes smaller */
+  width: 95vw;
+  /* Slightly narrower */
   margin-top: 20px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .myFullPageSwiper {
@@ -59,9 +61,11 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Pushes button to bottom */
+  justify-content: flex-end;
+  /* Pushes button to bottom */
   align-items: center;
-  padding-bottom: 80px; /* Space from bottom */
+  padding-bottom: 80px;
+  /* Space from bottom */
 }
 
 /* BUTTON STYLE (From your Hero.css) */
@@ -139,14 +143,15 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: #fff;
   font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 50; /* Super high z-index to catch clicks */
+  z-index: 50;
+  /* Super high z-index to catch clicks */
   transition: all 0.3s ease;
 }
 
@@ -156,19 +161,64 @@
   transform: translateY(-50%) scale(1.1);
 }
 
-.hero-nav-prev { left: 30px; }
-.hero-nav-next { right: 30px; }
+.hero-nav-prev {
+  left: 30px;
+}
+
+.hero-nav-next {
+  right: 30px;
+}
 
 /* Hide standard Swiper arrows */
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
   display: none !important;
 }
 
 /* Mobile Adjustments */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-  .hero-nav { display: none; }
-  
-  .split-screen { flex-direction: column; }
-  .split-left { height: 50%; }
-  .split-right { height: 50%; }
+  .hero-wrapper {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  /* Enable shrink effect on mobile too */
+  .hero-wrapper--shrink {
+    height: 60vh;
+    width: 90vw;
+    margin-top: 20px;
+    border-radius: 15px;
+  }
+
+  .hero-nav {
+    display: none;
+  }
+
+  .split-screen {
+    flex-direction: column;
+  }
+
+  .split-left {
+    height: 60%;
+  }
+
+  .split-right {
+    height: 40%;
+    padding: 20px;
+  }
+
+  .hero-content-video {
+    justify-content: flex-end;
+    padding-bottom: 90px;
+  }
+
+  .quote-text {
+    font-size: 1.5rem;
+  }
+
+  .quote-author {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
 }

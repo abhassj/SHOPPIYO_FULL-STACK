@@ -21,14 +21,73 @@ a.active hr {
 
 @media (max-width:640px) {
   a.active {
-    background-color: black;
-    color: white;
+    background-color: transparent;
+    color: #eab308;
+    /* yellow-500 or similar orange/gold */
+    font-weight: 600;
+    border-left: 4px solid #eab308;
+    padding-left: 12px;
+    /* compensate for border */
   }
-} 
+}
 
-html, body {
-  overflow-x: hidden; /* prevent horizontal scrolling */
+html,
+body {
+  overflow-x: hidden;
+  /* prevent horizontal scrolling */
   margin: 0;
   padding: 0;
 }
 
+/* Premium Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  /* Starts hidden */
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}

@@ -8,7 +8,7 @@ const Footer = () => {
 
         <div>
           <img className='mb-5 w-32' src={assets.logo} alt="" />
-          <p className='w-full md:w-2/3 text-gray-600'>Shoppiyo is your one-stop shop for unique and trending products. We're dedicated to providing high-quality items and a seamless shopping experience. For questions about your order or our policies, please visit our support pages.k.</p>
+          <p className='w-full md:w-2/3 text-gray-600 text-sm leading-6'>Shoppiyo is your one-stop shop for unique and trending products. We're dedicated to providing high-quality items and a seamless shopping experience. For questions about your order or our policies, please visit our support pages.</p>
         </div>
 
         <div>

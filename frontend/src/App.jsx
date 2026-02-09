@@ -22,9 +22,9 @@ const App = () => {
       
       {/* Navbar stays fixed at top */}
       <Navbar />
-
-      {/* All page content pushes down so it's not hidden */}
-      <div className='pt-[80px] px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
+      
+      {/* Conditionally apply padding: No padding on Home ('/') so Hero can be full screen */}
+      <div className={`${location.pathname === '/' ? '' : 'pt-[80px]'} px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]`}>
         <ToastContainer />
         <SearchBar />
 

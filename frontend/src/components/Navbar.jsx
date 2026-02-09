@@ -137,20 +137,60 @@ const Navbar = () => {
 
       {/* Mobile sidebar */}
       <div
-        className={`absolute top-0 right-0 bottom-0 bg-white backdrop-blur-xl transition-all ${
-          visible ? "w-full" : "w-0"
-        }`}
+        className={`fixed top-0 right-0 h-screen bg-white transition-all duration-500 z-[100] ${
+          visible ? "w-full opacity-100" : "w-0 opacity-0"
+        } overflow-hidden`}
       >
-        <div className="flex flex-col text-gray-600">
-          <div onClick={() => setVisble(false)} className="flex items-center gap-4 p-3">
-            <img className="h-4 rotate-180" src={assets.dropdown_icon} alt="" />
-            <p>Back</p>
-          </div>
+        <div className="flex flex-col text-gray-700 h-full">
+            {/* Header / Back Button */}
+            <div onClick={() => setVisble(false)} className="flex items-center gap-4 p-6 cursor-pointer hover:text-shippiyo-orange transition-colors">
+                <img className="h-4 rotate-180" src={assets.dropdown_icon} alt="Back" />
+                <p className="font-medium tracking-wide">BACK</p>
+            </div>
 
-          <NavLink onClick={() => setVisble(false)} to="/" className="py-2 pl-6 border">HOME</NavLink>
-          <NavLink onClick={() => setVisble(false)} to="/collection" className="py-2 pl-6 border">COLLECTION</NavLink>
-          <NavLink onClick={() => setVisble(false)} to="/about" className="py-2 pl-6 border">ABOUT</NavLink>
-          <NavLink onClick={() => setVisble(false)} to="/contact" className="py-2 pl-6 border">CONTACT</NavLink>
+            {/* Navigation Links - Premium Style */}
+            <div className="flex flex-col mt-10 px-8 gap-8">
+                <NavLink 
+                    onClick={() => setVisble(false)} 
+                    to="/" 
+                    className="text-3xl font-light tracking-wide hover:text-black transition-colors"
+                >
+                    HOME
+                </NavLink>
+                <NavLink 
+                    onClick={() => setVisble(false)} 
+                    to="/collection" 
+                    className="text-3xl font-light tracking-wide hover:text-black transition-colors"
+                >
+                    COLLECTION
+                </NavLink>
+                <NavLink 
+                    onClick={() => setVisble(false)} 
+                    to="/about" 
+                    className="text-3xl font-light tracking-wide hover:text-black transition-colors"
+                >
+                    ABOUT
+                </NavLink>
+                <NavLink 
+                    onClick={() => setVisble(false)} 
+                    to="/contact" 
+                    className="text-3xl font-light tracking-wide hover:text-black transition-colors"
+                >
+                    CONTACT
+                </NavLink>
+            </div>
+
+            {/* Sidebar Footer */}
+            <div className="mt-auto p-10 border-t border-gray-100">
+                <p className="text-xl font-medium mb-4">FOLLOW US</p>
+                <div className="flex gap-4 text-gray-500 text-sm tracking-widest uppercase">
+                    <p className="cursor-pointer hover:text-black transition-colors">Instagram</p>
+                    <p className="cursor-pointer hover:text-black transition-colors">Facebook</p>
+                    <p className="cursor-pointer hover:text-black transition-colors">Pinterest</p>
+                </div>
+                <p className="mt-8 text-xs text-gray-400">© 2025 Shoppiyo</p>
+            </div>
+
         </div>
       </div>
     </div>
